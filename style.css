@@ -1,0 +1,530 @@
+/* ===== إعدادات عامة ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    direction: rtl;
+    padding-top: 80px; /* يساوي تقريباً ارتفاع الهيدر */
+}
+
+/* ===== الهيدر ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111; /* أسود غامق */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #d4af37; /* ذهبي */
+}
+
+header .logo img {
+    width: 120px;
+}
+
+/* ===== القائمة الرئيسية ===== */
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #d4af37; /* ذهبي */
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+/* ===== زر الهامبرغر (الهاتف) ===== */
+.button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.button-content {
+    height: 4px;
+    background-color: #d4af37;
+    border-radius: 2px;
+}
+
+/* ===== القائمة الجانبية (الهاتف) ===== */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background-color: #111;
+    padding-top: 70px;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.nav-bar .logo img {
+    width: 100px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.nav-bar ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-bar ul li {
+    margin: 20px 0;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #fff;
+}
+
+.nav-bar.active {
+    right: 0;
+    z-index: 9999;
+}
+
+/* ===== تجاوب الشاشات ===== */
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+    }
+
+    .button {
+        display: flex;
+    }
+}
+
+
+/* ===== قسم الأسئلة الشائعة ===== */
+.questions {
+    max-width: 900px;
+    margin: 100px auto 40px; /* مسافة أسفل الهيدر */
+    padding: 20px;
+    background-color: #111;
+    border: 1px solid #d4af37;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+
+.questions h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #d4af37; /* ذهبي */
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.questions h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #d4af37;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== الصندوق لكل سؤال ===== */
+.question-content {
+    background-color: #000; /* أسود */
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.question-content:hover {
+    background-color: #222;
+    transform: translateY(-3px);
+}
+
+.question-content h4 {
+    color: #d4af37; /* ذهبي */
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.question-content p {
+    color: #ddd;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* ===== تجاوب الشاشات الصغيرة ===== */
+@media (max-width: 768px) {
+    .questions {
+        padding: 15px;
+        margin: 100px 15px 30px;
+    }
+
+    .questions h1 {
+        font-size: 26px;
+    }
+
+    .question-content h4 {
+        font-size: 18px;
+    }
+
+    .question-content p {
+        font-size: 14px;
+    }
+}
+
+/* ===== قسم حول الأكاديمية ===== */
+.acadimi {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #111; /* خلفية سوداء */
+    border: 1px solid #d4af37; /* إطار ذهبي */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.acadimi img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #d4af37;
+}
+
+.acadimi h1 {
+    font-size: 32px;
+    color: #d4af37;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.acadimi h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #d4af37;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.acadimi p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ddd;
+    padding: 0 20px;
+}
+
+/* ===== تجاوب الشاشات ===== */
+@media (max-width: 992px) {
+    .acadimi {
+        margin: 30px 20px;
+    }
+    
+    .acadimi p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .acadimi {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    .acadimi h1 {
+        font-size: 26px;
+    }
+
+    .acadimi p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+
+/* ===== قسم المدرب ===== */
+.trainer {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #111; /* أسود غامق */
+    border: 1px solid #d4af37; /* ذهبي */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trainer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+.trainer img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #d4af37; /* ذهبي */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.trainer img:hover {
+    transform: scale(1.05);
+}
+
+.trainer h1 {
+    font-size: 26px;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.trainer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    padding: 0 10px;
+}
+
+/* ===== تجاوب الشاشات ===== */
+@media (max-width: 768px) {
+    .trainer {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .trainer img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .trainer h1 {
+        font-size: 22px;
+    }
+
+    .trainer p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trainer img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .trainer h1 {
+        font-size: 20px;
+    }
+
+    .trainer p {
+        font-size: 14px;
+    }
+}
+
+/* ===== قسم العنوان ===== */
+.academy-address {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #111; /* أسود غامق */
+    border: 1px solid #d4af37; /* ذهبي */
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.academy-address h2 {
+    font-size: 24px;
+    color: #d4af37; /* ذهبي */
+    margin-bottom: 10px;
+}
+
+.academy-address h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-top: 15px;
+    border-top: 1px solid #d4af37;
+    padding-top: 10px;
+}
+
+.academy-address p {
+    font-size: 16px;
+    color: #ddd;
+    margin: 5px 0;
+}
+
+/* ===== تجاوب الشاشات ===== */
+@media (max-width: 768px) {
+    .academy-address {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .academy-address h2 {
+        font-size: 20px;
+    }
+
+    .academy-address h3 {
+        font-size: 18px;
+    }
+
+    .academy-address p {
+        font-size: 14px;
+    }
+}
+
+
+/* ===== قسم معلومات التواصل ===== */
+.contact-info {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #111; /* أسود */
+    border: 1px solid #d4af37; /* ذهبي */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin: 15px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #ddd;
+}
+
+.contact-info ul li i {
+    color: #d4af37;
+    font-size: 20px;
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.contact-info ul li a:hover {
+    color: #fff;
+}
+
+/* ===== تجاوب الشاشات ===== */
+@media (max-width: 768px) {
+    .contact-info {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 20px;
+    }
+
+    .contact-info ul li {
+        font-size: 16px;
+    }
+}
+
+
+/* ===== الفوتر ===== */
+footer {
+    background-color: #111; /* خلفية سوداء داكنة */
+    border-top: 2px solid #d4af37; /* خط ذهبي في الأعلى */
+    padding: 25px 20px;
+    text-align: center;
+    color: #ddd;
+    font-size: 16px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.6);
+}
+
+footer .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+footer .social-links a {
+    color: #d4af37;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+    color: #fff;
+}
+
+/* أيقونات فونت أوسم (FontAwesome) */
+footer .social-links i {
+    vertical-align: middle;
+}
+
+/* دعوة للتواصل */
+footer .contact-invite {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+}
